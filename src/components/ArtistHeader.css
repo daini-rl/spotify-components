@@ -1,0 +1,40 @@
+.artist-header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.headerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.artist-info {
+  text-align: left; /* Alinea el texto a la izquierda */
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+}
+
+.artist-info img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.nameArtist {
+  font-size: 48px; /* Ajusta el tamaño de la fuente según tus necesidades */
+  font-weight: bold;
+}
+
+.verified {
+  font-size: 24px;
+}
+
+.monthlyListeners {
+  font-size: 18px;
+}
