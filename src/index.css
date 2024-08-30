@@ -4,6 +4,8 @@
   --gray-color: #9f9f9f;
   --green-color: #3be477;
   --font-bold: bold;
+  --page-width: 1200px;
+  --content-max-width: 800px; 
 }
 
 * {
@@ -13,5 +15,17 @@
 }
 
 body {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
   background-color: var(--background-color);
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  max-width: var(--content-max-width);
+  width: 100%; 
+  color: var(--white-color);
+  text-align: center; 
 }
