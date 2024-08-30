@@ -13,7 +13,7 @@
 }
 
 .artist-info {
-  text-align: left; /* Alinea el texto a la izquierda */
+  text-align: left; 
   position: absolute;
   margin-bottom: 30px;
   left: 20px;
@@ -27,7 +27,7 @@
 }
 
 .name-artist {
-  font-size: 48px; /* Ajusta el tamaño de la fuente según tus necesidades */
+  font-size: 48px; 
   font-weight: bold;
   margin: 0;
 }

@@ -1,6 +1,5 @@
 import './ArtistHeader.css';
 
-// Componente ArtistHeader
 const ArtistHeader = ({ headerImg, nameArtist, verified, monthlyListeners }) => {
   const formattedListeners = monthlyListeners?.toLocaleString();
 
