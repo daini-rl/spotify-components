@@ -5,9 +5,9 @@
   align-items: flex-end;
 }
 
-.headerImg {
+.header-img {
   width: 100%;
-  height: 100%;
+  height: 400px;
   object-fit: cover;
   filter: brightness(70%);
 }
@@ -15,7 +15,7 @@
 .artist-info {
   text-align: left; /* Alinea el texto a la izquierda */
   position: absolute;
-  bottom: 20px;
+  margin-bottom: 30px;
   left: 20px;
   color: white;
 }
@@ -26,15 +26,18 @@
   margin-right: 10px;
 }
 
-.nameArtist {
+.name-artist {
   font-size: 48px; /* Ajusta el tamaño de la fuente según tus necesidades */
   font-weight: bold;
+  margin: 0;
 }
 
 .verified {
   font-size: 24px;
+  margin: 0;
 }
 
-.monthlyListeners {
+.monthly-listeners {
   font-size: 18px;
+  margin: 0;
 }

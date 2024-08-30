@@ -6,7 +6,7 @@ const ArtistHeader = ({ headerImg, nameArtist, verified, monthlyListeners }) => 
 
   return (
     <div className="artist-header">
-      <img src={headerImg} alt={`${nameArtist} header`} className="headerImg" />
+      <img src={headerImg} alt={`${nameArtist} header`} className="header-img" />
       <div className="artist-info">
         {verified && (
           <div className="verified">
@@ -14,9 +14,9 @@ const ArtistHeader = ({ headerImg, nameArtist, verified, monthlyListeners }) => 
             <span className="verified-text">Verified Artist</span>
           </div>
         )}
-        <h1 className="nameArtist">{nameArtist}</h1>
+        <h1 className="name-artist">{nameArtist}</h1>
         {formattedListeners && (
-          <p className="monthlyListeners">{formattedListeners} monthly listeners</p>
+          <p className="monthly-listeners">{formattedListeners} monthly listeners</p>
         )}
       </div>
     </div>

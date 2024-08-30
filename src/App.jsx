@@ -1,13 +1,10 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import React from 'react';
 import './App.css';
-import { data } from './data/data.js'; // Ajusta la ruta según sea necesario
+import { data } from './data/data.js'; 
 import ArtistHeader from './components/ArtistHeader.jsx';
 
 function App() {
-  const { profile, stats } = data.artistUnion; // Desestructura el objeto `artistUnion`
+  const { profile, stats, discography } = data.artistUnion; // Desestructura el objeto `artistUnion`
+
   return (
     <div className="App">
       <ArtistHeader
