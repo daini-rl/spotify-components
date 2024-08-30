@@ -1,5 +1,9 @@
 :root {
   --background-color: #282828;
+  --white-color: #ffffff;
+  --gray-color: #9f9f9f;
+  --green-color: #3be477;
+  --font-bold: bold;
 }
 
 * {

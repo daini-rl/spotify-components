@@ -1,9 +1,3 @@
-:root {
-  --white-color: #ffffff;
-  --gray-color: #9f9f9f;
-  --green-color: #3be477;
-  --font-bold: bold;
-}
 .button {
   cursor: pointer;
   display: flex;
