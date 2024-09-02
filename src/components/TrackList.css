@@ -1,0 +1,22 @@
+.songs-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr 80px;
+  margin: 20px;
+  align-items: center;
+  height: 100%;
+}
+
+.songs-title {
+  border-bottom: 2px solid #3c3c39;
+  font-size: 16px;
+  margin: 20px 0;
+  padding: 0 0 10px 20px;
+  color: var(--gray-color);
+  text-align: left;
+}
+
+.song-title__icon {
+  text-align: left;
+  padding: 0 0 12px 0;
+  width: 100%;
+}
