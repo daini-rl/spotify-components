@@ -35,6 +35,9 @@ function App() {
     return songsDetails;
   };
 
+  const albumDetails = getAlbumDetails(data);
+  const validateAlbumDetails = albumDetails.length > 0;
+
   return (
     <div className="App">
       <ArtistHeader
@@ -47,9 +50,11 @@ function App() {
         <ActionButtons />
       </div>
       <div>
-        {getAlbumDetails(data).map((album) => (
-          <TrackList songs={album.songs} key={album.id} />
-        ))}
+        {validateAlbumDetails ? (
+          albumDetails.map((album) => <TrackList songs={album.songs} key={album.id} />)
+        ) : (
+          <p>Album not found</p>
+        )}
       </div>
     </div>
   );
