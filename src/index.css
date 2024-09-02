@@ -1,19 +1,31 @@
 :root {
-  font-family: Arial, sans-serif;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --background-color: #282828;
+  --white-color: #ffffff;
+  --gray-color: #9f9f9f;
+  --green-color: #3be477;
+  --font-bold: bold;
+  --page-width: 1200px;
+  --content-max-width: 800px; 
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+  background-color: var(--background-color);
+  font-family: Arial, sans-serif;
 }
 
-
-
-
+.App {
+  max-width: var(--content-max-width);
+  width: 100%; 
+  color: var(--white-color);
+  text-align: center; 
+}
