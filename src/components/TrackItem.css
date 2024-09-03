@@ -1,0 +1,41 @@
+.songs-grid .songs-grid__item,
+.songs-grid__title {
+  display: contents;
+}
+
+.songs-grid__item p {
+  display: flex;
+  padding-left: var(--padding-left);
+  padding-top: var(--padding-top);
+  height: 100%;
+}
+
+.songs-grid__position,
+.songs-grid__duration {
+  color: var(--gray-color);
+  align-items: center;
+}
+
+.songs-grid__item:hover * {
+  background-color: var(--background-color);
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.songs-grid__name-artist {
+  display: flex;
+  flex-direction: column;
+}
+
+.songs-grid__name {
+  font-size: 16px;
+}
+
+.songs-grid__artist {
+  font-size: 14px;
+  color: var(--gray-color);
+  text-align: left;
+  width: 100%;
+  padding-left: var(--padding-left);
+  padding-bottom: 4px;
+}
