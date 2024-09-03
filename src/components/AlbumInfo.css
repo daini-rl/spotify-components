@@ -2,7 +2,7 @@
   display: flex;
   padding: 20px;
   background-color: #121212;
-  color: #fff;
+  color: var(--white-color);
 }
 
 .album-cover {
@@ -13,7 +13,7 @@
 
 .album-details {
   margin-left: 20px;
-  text-align: left; 
+  text-align: left;
 }
 
 .album-details h2 {
@@ -37,27 +37,9 @@
   gap: 10px;
 }
 
-
-
 .action-buttons {
   display: flex;
-  justify-content:left; /* Centra los botones horizontalmente */
-  gap: 10px; /* Añade espacio entre los botones */
+  justify-content: left;
+  gap: 10px;
   margin-top: 15px;
 }
-
-
-
-.button.play {
-  color: rgb(255, 255, 255); /* Puedes aplicar un color específico al botón de play */
-}
-
-.button.add {
-  color: rgb(255, 255, 255); /* Puedes aplicar un color específico al botón de añadir */
-}
-
-.button.more {
-  color: gray; /* Puedes aplicar un color específico al botón de más */
-}
-
-/* Puedes añadir más estilos según tus necesidades */

@@ -1,7 +1,7 @@
 import React from 'react';
 import './AlbumInfo.css';
-import Button from './Button'; // Asegúrate de importar el componente Button
-import { faCirclePlay, faCirclePlus, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
+import Button from './Button'; 
+import { faCirclePlay,faCirclePlus, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 const AlbumInfo = ({ album }) => {
   if (!album) {
@@ -23,8 +23,8 @@ const AlbumInfo = ({ album }) => {
         </p>
         <div className="action-buttons">
           <Button variant="contained" icon={faCirclePlay} color="white" size="medium" />
-          <Button variant="add" icon={faCirclePlus} color="white" size="medium" />
-          <Button variant="icon" key="more-button" icon={faEllipsisH} color="gray" size="medium" />
+          <Button variant="icon" icon={faCirclePlus} color="white" size="medium" />
+          <Button variant="icon" icon={faEllipsisH} color="gray" size="medium" />
         </div>
       </div>
     </div>

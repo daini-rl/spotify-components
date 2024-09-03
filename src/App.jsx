@@ -55,7 +55,7 @@ function App() {
       {albums.map((albumGroup) =>
         albumGroup.releases.items.slice(0, 1).map((album) => {
           const songs = getSongsAlbum(album);
-          const albumDetail = albumDetails.find((detail) => detail.id === album.id);
+          const albumDetail = albumDetails.find(detail => detail.id === album.id);
           return (
             <div key={album.id}>
               <AlbumInfo album={album} />
@@ -66,7 +66,7 @@ function App() {
               )}
             </div>
           );
-        }),
+        })
       )}
     </div>
   );
