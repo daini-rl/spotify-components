@@ -1,7 +1,7 @@
 import React from 'react';
 import './AlbumInfo.css';
-import Button from './Button'; 
-import { faCirclePlay,faCirclePlus, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
+import Button from './Button';
+import { faCirclePlay, faCirclePlus, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 const AlbumInfo = ({ album }) => {
   if (!album) {
