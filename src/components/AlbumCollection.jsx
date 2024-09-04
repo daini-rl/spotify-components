@@ -8,7 +8,7 @@ function AlbumCollection({ albums, getSongsAlbum, albumDetails, validateAlbumDet
       {albums.map((albumGroup) =>
         albumGroup.releases.items.map((album) => {
           const songs = getSongsAlbum(album);
-          const albumDetail = albumDetails.find(detail => detail.id === album.id);
+          const albumDetail = albumDetails.find((detail) => detail.id === album.id);
           return (
             <div key={album.id} className="album-item">
               <AlbumInfo album={album} />
@@ -19,7 +19,7 @@ function AlbumCollection({ albums, getSongsAlbum, albumDetails, validateAlbumDet
               )}
             </div>
           );
-        })
+        }),
       )}
     </div>
   );
