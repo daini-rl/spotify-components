@@ -3,8 +3,8 @@
   width: 100%;
   display: flex;
   align-items: flex-end;
-  min-height: 400px; 
-  overflow: hidden; 
+  min-height: 400px;
+  overflow: hidden;
 }
 
 .header-img {
@@ -15,7 +15,7 @@
 }
 
 .artist-info {
-  text-align: left; 
+  text-align: left;
   position: absolute;
   margin-bottom: 30px;
   left: 20px;
@@ -29,17 +29,28 @@
 }
 
 .name-artist {
-  font-size: 48px; 
+  font-size: 48px;
   font-weight: bold;
   margin: 0;
 }
 
 .verified {
-  font-size: 24px;
+  font-size: 18px;
   margin: 0;
 }
 
 .monthly-listeners {
   font-size: 18px;
   margin: 0;
+}
+
+.verified-icon {
+  color: #4cb3ff;
+}
+
+.check-icon {
+  color: var(--white-color);
+  background-color: transparent;
+  font-size: 10px;
+  margin: 0 10px 3px -13px;
 }
