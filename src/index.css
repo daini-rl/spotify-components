@@ -1,34 +1,34 @@
-:root {
-  --background-color: #282828;
-  --background-color-main: #121212;
-  --white-color: #ffffff;
-  --gray-color: #9f9f9f;
-  --green-color: #3be477;
-  --font-bold: bold;
-  --page-width: 1200px;
-  --content-max-width: 800px;
-  --padding-left: 20px;
-  --padding-top: 10px;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background-color);
-  font-family: Arial, sans-serif;
-}
-
-.App {
-  max-width: var(--content-max-width);
-  width: 100%;
-  color: var(--white-color);
-  text-align: center;
-  background-color: var(--background-color-main);
-}
+  :root {
+    --background-color: #282828;
+    --background-color-main: #121212;
+    --white-color: #ffffff;
+    --gray-color: #9f9f9f;
+    --green-color: #3be477;
+    --font-bold: bold;
+    --page-width: 1200px;
+    --content-max-width: 800px;
+    --padding-left: 20px;
+    --padding-top: 10px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    font-family: Arial, sans-serif;
+  }
+  
+  .App {
+    max-width: var(--content-max-width);
+    width: 100%;
+    color: var(--white-color);
+    text-align: center;
+    background-color: var(--background-color-main);
+  }

@@ -1,10 +1,13 @@
 import { data } from './data/data.js';
 import ArtistHeader from './components/ArtistHeader.jsx';
 import ActionButtons from './components/ActionButtons.jsx';
+import AlbumInfo from './components/AlbumInfo.jsx';
 import TrackList from './components/TrackList.jsx';
 
 function App() {
   const { profile, stats, discography } = data.artistUnion;
+
+  const albums = discography.albums.items;
 
   const getAlbumDetails = (data) => {
     const albums = data?.artistUnion?.discography?.albums.items || [];
@@ -49,13 +52,22 @@ function App() {
       <div>
         <ActionButtons />
       </div>
-      <div>
-        {validateAlbumDetails ? (
-          albumDetails.map((album) => <TrackList songs={album.songs} key={album.id} />)
-        ) : (
-          <p>Album not found</p>
-        )}
-      </div>
+      {albums.map((albumGroup) =>
+        albumGroup.releases.items.map((album) => {
+          const songs = getSongsAlbum(album);
+          const albumDetail = albumDetails.find(detail => detail.id === album.id);
+          return (
+            <div key={album.id}>
+              <AlbumInfo album={album} />
+              {validateAlbumDetails && albumDetail ? (
+                <TrackList songs={albumDetail.songs} />
+              ) : (
+                <p>Album not found</p>
+              )}
+            </div>
+          );
+        })
+      )}
     </div>
   );
 }

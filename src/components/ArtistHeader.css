@@ -3,6 +3,8 @@
   width: 100%;
   display: flex;
   align-items: flex-end;
+  min-height: 400px; 
+  overflow: hidden; 
 }
 
 .header-img {
@@ -17,7 +19,7 @@
   position: absolute;
   margin-bottom: 30px;
   left: 20px;
-  color: white;
+  color: var(--white-color);
 }
 
 .artist-info img {
