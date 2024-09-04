@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCertificate, faCheck } from '@fortawesome/free-solid-svg-icons';
 import './ArtistHeader.css';
 
 const ArtistHeader = ({ headerImg, nameArtist, verified, monthlyListeners }) => {
@@ -9,7 +11,8 @@ const ArtistHeader = ({ headerImg, nameArtist, verified, monthlyListeners }) => 
       <div className="artist-info">
         {verified && (
           <div className="verified">
-            <img src="/src/img/icon-verificado.png" alt="Artista verificado" className="verified" />
+            <FontAwesomeIcon icon={faCertificate} className="verified-icon" />
+            <FontAwesomeIcon icon={faCheck} className="check-icon" />
             <span className="verified-text">Verified Artist</span>
           </div>
         )}
