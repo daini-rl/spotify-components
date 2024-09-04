@@ -7,7 +7,7 @@ import TrackList from './components/TrackList.jsx';
 function App() {
   const { profile, stats, discography } = data.artistUnion;
 
-  const albums = discography.albums.items.slice(0, 3);
+  const albums = discography.albums.items;
 
   const getAlbumDetails = (data) => {
     const albums = data?.artistUnion?.discography?.albums.items || [];
@@ -53,7 +53,7 @@ function App() {
         <ActionButtons />
       </div>
       {albums.map((albumGroup) =>
-        albumGroup.releases.items.slice(0, 1).map((album) => {
+        albumGroup.releases.items.map((album) => {
           const songs = getSongsAlbum(album);
           const albumDetail = albumDetails.find(detail => detail.id === album.id);
           return (
@@ -62,7 +62,7 @@ function App() {
               {validateAlbumDetails && albumDetail ? (
                 <TrackList songs={albumDetail.songs} />
               ) : (
-                <p>Track list not found</p>
+                <p>Album not found</p>
               )}
             </div>
           );
