@@ -1,13 +1,10 @@
 import { data } from './data/data.js';
-import ArtistHeader from './components/ArtistHeader.jsx';
-import ActionButtons from './components/ActionButtons.jsx';
-import AlbumInfo from './components/AlbumInfo.jsx';
-import TrackList from './components/TrackList.jsx';
+import ArtistHeader from './components/ArtistHeader';
+import ActionButtons from './components/ActionButtons';
+import AlbumCollection from './components/AlbumCollection.jsx';
 
 function App() {
-  const { profile, stats, discography } = data.artistUnion;
-
-  const albums = discography.albums.items;
+  const { profile, stats } = data.artistUnion;
 
   const getAlbumDetails = (data) => {
     const albums = data?.artistUnion?.discography?.albums.items || [];
@@ -16,6 +13,11 @@ function App() {
         const release = album?.releases?.items?.[0] || {};
         return {
           id: release.id || '',
+          imgAlbum: release.coverArt.sources?.[0]?.url || '',
+          nameAlbum: release.name || '',
+          type: release.type || '',
+          yearAlbum: release.date?.year || '',
+          totalCount: release.tracks?.totalCount || 0,
           songs: getSongsAlbum(album),
         };
       }) || [];
@@ -24,7 +26,7 @@ function App() {
 
   const getSongsAlbum = (album) => {
     const songsAlbum = album?.releases?.items?.[0]?.tracks?.items || [];
-    const songsDetails = songsAlbum.map((trackItem) => {
+    return songsAlbum.map((trackItem) => {
       const track = trackItem?.track || {};
       return {
         uid: trackItem?.uid || '',
@@ -34,12 +36,9 @@ function App() {
         duration: track.duration?.totalMilliseconds || '0',
       };
     });
-
-    return songsDetails;
   };
 
   const albumDetails = getAlbumDetails(data);
-  const validateAlbumDetails = albumDetails.length > 0;
 
   return (
     <div className="App">
@@ -52,22 +51,9 @@ function App() {
       <div>
         <ActionButtons />
       </div>
-      {albums.map((albumGroup) =>
-        albumGroup.releases.items.map((album) => {
-          const songs = getSongsAlbum(album);
-          const albumDetail = albumDetails.find(detail => detail.id === album.id);
-          return (
-            <div key={album.id}>
-              <AlbumInfo album={album} />
-              {validateAlbumDetails && albumDetail ? (
-                <TrackList songs={albumDetail.songs} />
-              ) : (
-                <p>Album not found</p>
-              )}
-            </div>
-          );
-        })
-      )}
+      <div>
+        <AlbumCollection albums={albumDetails} />
+      </div>
     </div>
   );
 }

@@ -27,16 +27,6 @@
   margin-bottom: 15px;
 }
 
-.album-title {
-  margin-left: 0px;
-}
-
-.album-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .action-buttons {
   display: flex;
   justify-content: left;
