@@ -1,25 +1,29 @@
 import { data } from './data/data.js';
 import ArtistHeader from './components/ArtistHeader';
 import ActionButtons from './components/ActionButtons';
-import AlbumInfo from './components/AlbumInfo';
-import TrackList from './components/TrackList';
+import AlbumCollection from './components/AlbumCollection.jsx';
 
 function App() {
-  const { profile, stats, discography } = data.artistUnion;
-  const albums = discography.albums.items;
+  const { profile, stats } = data.artistUnion;
 
-  // Función para obtener detalles del álbum
-  const getAlbumDetails = (albums) => {
-    return albums.map((album) => {
-      const release = album?.releases?.items?.[0] || {};
-      return {
-        id: release.id || '',
-        songs: getSongsAlbum(album),
-      };
-    });
+  const getAlbumDetails = (data) => {
+    const albums = data?.artistUnion?.discography?.albums.items || [];
+    const albumDetails =
+      albums.map((album) => {
+        const release = album?.releases?.items?.[0] || {};
+        return {
+          id: release.id || '',
+          imgAlbum: release.coverArt.sources?.[0]?.url || '',
+          nameAlbum: release.name || '',
+          type: release.type || '',
+          yearAlbum: release.date?.year || '',
+          totalCount: release.tracks?.totalCount || 0,
+          songs: getSongsAlbum(album),
+        };
+      }) || [];
+    return albumDetails;
   };
 
-  // Función para obtener canciones del álbum
   const getSongsAlbum = (album) => {
     const songsAlbum = album?.releases?.items?.[0]?.tracks?.items || [];
     return songsAlbum.map((trackItem) => {
@@ -34,8 +38,7 @@ function App() {
     });
   };
 
-  // Obtener detalles del álbum
-  const albumDetails = getAlbumDetails(albums);
+  const albumDetails = getAlbumDetails(data);
 
   return (
     <div className="App">
@@ -48,22 +51,8 @@ function App() {
       <div>
         <ActionButtons />
       </div>
-      <div className="album-collection">
-        {albums.map((albumGroup) =>
-          albumGroup.releases.items.map((album) => {
-            const albumDetail = albumDetails.find(detail => detail.id === album.id);
-            return (
-              <div key={album.id} className="album-item">
-                <AlbumInfo album={album} />
-                {albumDetail ? (
-                  <TrackList songs={albumDetail.songs} />
-                ) : (
-                  <p>Track list not found</p>
-                )}
-              </div>
-            );
-          })
-        )}
+      <div>
+        <AlbumCollection albums={albumDetails} />
       </div>
     </div>
   );
